@@ -1,0 +1,102 @@
+﻿<div class="page-header">
+    <h2>Add a new person to your addressbook</h2>
+</div>
+<div ng-form="addPerson" class="form-horizontal">
+    <div class="form-group">
+        <label class="col-lg-4 control-label">
+            First Name
+            <label class="text-danger">*</label>
+        </label>
+        <div class="col-lg-4">
+            <input class="form-control" ng-model="person.FirstName" />
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-lg-4 control-label">
+            Last Name
+            <label class="text-danger">*</label>
+        </label>
+        <div class="col-lg-4">
+            <input class="form-control" ng-model="person.LastName" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-lg-4 control-label">
+            Phone
+            <label class="text-danger">*</label>
+        </label>
+        <div class="col-lg-4">
+            <input class="form-control" ng-model="person.Phone" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-lg-4 control-label">
+            Email
+            <label class="text-danger">*</label>
+        </label>
+        <div class="col-lg-4">
+            <input class="form-control" ng-model="person.Email" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-lg-4 control-label">
+            Blog
+            <label class="text-danger">*</label>
+        </label>
+        <div class="col-lg-4">
+            <input class="form-control" ng-model="person.Blog" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-lg-4 control-label">
+            Facebook
+            <label class="text-danger">*</label>
+        </label>
+        <div class="col-lg-4">
+            <input class="form-control" ng-model="person.Facebook" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-lg-4 control-label">
+            Twitter
+            <label class="text-danger">*</label>
+        </label>
+        <div class="col-lg-4">
+            <input class="form-control" ng-model="person.Twitter" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-lg-4 control-label">
+            LinkedIn
+            <label class="text-danger">*</label>
+        </label>
+        <div class="col-lg-4">
+            <input class="form-control" ng-model="person.LinkedIn" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-lg-4 control-label">
+            Google+
+            <label class="text-danger">*</label>
+        </label>
+        <div class="col-lg-4">
+            <input class="form-control" ng-model="person.Googleplus" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-7 col-lg-offset-7"><button class="btn btn-primary" ng-click="save()">Save</button></div>
+    </div>
+
+    {{person}}
+</div>
+
+

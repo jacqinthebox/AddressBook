@@ -15,7 +15,7 @@ namespace AddressBook
 
         public MongoConnectionHandler()
         {
-            const string connectionString = "mongodb://xxx:xxx@ds027758.mongolab.com:27758/addressbook";
+            const string connectionString = "mongodb://xx:xx@ds027758.mongolab.com:27758/addressbook";
             //const string connectionString = "mongodb://localhost:27017";
             //// Get a thread-safe client object by using a connection string
             var mongoClient = new MongoClient(connectionString);

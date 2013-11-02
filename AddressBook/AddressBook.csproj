@@ -82,9 +82,11 @@
     <Content Include="app\css\bootstrap.min.css" />
     <Content Include="app\css\custom.css" />
     <Content Include="app\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="app\hello.html" />
+    <Content Include="app\templates\about.html" />
     <Content Include="app\index.html" />
     <Content Include="app\js\app.js" />
+    <Content Include="app\templates\newPerson.html" />
+    <Content Include="app\templates\start.html" />
     <Content Include="Global.asax" />
     <Content Include="app\lib\angular\angular-bootstrap-prettify.js" />
     <Content Include="app\lib\angular\angular-bootstrap-prettify.min.js" />
@@ -421,7 +423,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\img\" />
-    <Folder Include="app\templates\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <PropertyGroup>
