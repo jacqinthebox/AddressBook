@@ -7,17 +7,18 @@ using System.Web;
 
 namespace AddressBook.Models
 {
-    public class Person 
+    public class Contact 
     {
    
-        public Person()
+       
+        public Contact()
         {
-            Person_Id = ObjectId.GenerateNewId().ToString();
-        }
+          Id = ObjectId.GenerateNewId().ToString();
+        } 
    
 
         [BsonId]
-        public string Person_Id { get; set; }
+        public string Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Phone { get; set; }

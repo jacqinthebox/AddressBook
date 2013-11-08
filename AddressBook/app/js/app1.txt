@@ -1,0 +1,98 @@
+﻿//app/lib/app.js:
+var addressbookModule = angular.module('addressbookModule', [])
+
+.config(function ($routeProvider, $locationProvider) {
+    // $locationProvider.html5Mode(true);
+
+    $routeProvider.when('/',
+        {
+            templateUrl: '/app/templates/start.html',
+            controller: 'ContactController'
+        }
+        )
+
+    $routeProvider.when('/new',
+        {
+            templateUrl: '/app/templates/newContact.html',
+            controller: 'ContactController'
+        }
+        )
+
+    $routeProvider.when('/about',
+       {
+           templateUrl: '/app/templates/about.html',
+
+       }
+       )
+
+});
+
+
+
+addressbookModule.factory('allContactData', function ($http, $log) {
+    return {
+        getContacts: function (successcb) {
+            $http({ method: 'GET', url: 'http://localhost:8000/api/Contact' })
+                    .success(function (data, status, headers, config) {
+                        $log.info(data, status, headers(), config);
+                        successcb(data);
+                    })
+                    .error(function (data, status, headers, config) {
+                        $log.warn(data, status, headers, config);
+                    });
+        }
+    };
+});
+
+addressbookModule.factory('ContactData', function ($http, $log,$routeParams) {
+    return {
+        getContact: function (successcb) {
+            $http({ method: 'GET', url: 'http://localhost:8000/api/Contact/' + $routeParams.id })
+                    .success(function (data, status, headers, config) {
+                        $log.info(data, status, headers(), config);
+                        successcb(data);
+                    })
+                    .error(function (data, status, headers, config) {
+                        $log.warn(data, status, headers, config);
+                    });
+        }
+    };
+});
+
+/*
+.factory('ContactFactory', function ($resource) {
+    return $resource('http://localhost:8000/api/Contact/:id', {}, {
+        show: { method: 'GET' },
+        update: { method: 'PUT', params: { id: '@id' } },
+        delete: { method: 'DELETE', params: { id: '@id' } }
+    })
+})
+
+
+//controllers
+addressbookModule.controller('ContactController', function ($scope, allContactData, ContactData, $http, $location) {
+    $scope.appname = "Awesome Addressbook";
+
+   // $scope.Contact = {};
+
+    $scope.save = function () {
+        $http.post('http://localhost:8000/api/Contact', $scope.Contact)
+        .success(function (data, status, headers, config) {
+
+            console.log("ging goed");
+            $location.url("/");
+
+        });
+    }
+    /*
+    allContactData.getContacts(function (Contacts) {
+        $scope.Contacts = Contacts;
+    });
+    */
+
+    $scope.load = function () {
+        ContactData.getContact(function (Contact) {
+            $scope.Contact = Contact;
+        });
+    }
+});

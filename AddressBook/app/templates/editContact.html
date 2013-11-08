@@ -1,14 +1,15 @@
-﻿<div class="page-header">
-    <h2>Add a new person to your addressbook</h2>
+﻿
+<div class="page-header">
+    <h2>Edit contact</h2>
 </div>
-<div ng-form="addPerson" class="form-horizontal">
+<div ng-form="addContact" class="form-horizontal">
     <div class="form-group">
         <label class="col-lg-4 control-label">
             First Name
             <label class="text-danger">*</label>
         </label>
         <div class="col-lg-4">
-            <input class="form-control" ng-model="person.FirstName" />
+            <input class="form-control" ng-model="contact.FirstName" />
 
         </div>
     </div>
@@ -19,7 +20,7 @@
             <label class="text-danger">*</label>
         </label>
         <div class="col-lg-4">
-            <input class="form-control" ng-model="person.LastName" />
+            <input class="form-control" ng-model="contact.LastName" />
         </div>
     </div>
 
@@ -29,7 +30,7 @@
             <label class="text-danger">*</label>
         </label>
         <div class="col-lg-4">
-            <input class="form-control" ng-model="person.Phone" />
+            <input class="form-control" ng-model="contact.Phone" />
         </div>
     </div>
 
@@ -39,7 +40,7 @@
             <label class="text-danger">*</label>
         </label>
         <div class="col-lg-4">
-            <input class="form-control" ng-model="person.Email" />
+            <input class="form-control" ng-model="contact.Email" />
         </div>
     </div>
 
@@ -49,7 +50,7 @@
             <label class="text-danger">*</label>
         </label>
         <div class="col-lg-4">
-            <input class="form-control" ng-model="person.Blog" />
+            <input class="form-control" ng-model="contact.Blog" />
         </div>
     </div>
 
@@ -59,7 +60,7 @@
             <label class="text-danger">*</label>
         </label>
         <div class="col-lg-4">
-            <input class="form-control" ng-model="person.Facebook" />
+            <input class="form-control" ng-model="contact.Facebook" />
         </div>
     </div>
 
@@ -69,7 +70,7 @@
             <label class="text-danger">*</label>
         </label>
         <div class="col-lg-4">
-            <input class="form-control" ng-model="person.Twitter" />
+            <input class="form-control" ng-model="contact.Twitter" />
         </div>
     </div>
 
@@ -79,7 +80,7 @@
             <label class="text-danger">*</label>
         </label>
         <div class="col-lg-4">
-            <input class="form-control" ng-model="person.LinkedIn" />
+            <input class="form-control" ng-model="contact.LinkedIn" />
         </div>
     </div>
 
@@ -89,14 +90,14 @@
             <label class="text-danger">*</label>
         </label>
         <div class="col-lg-4">
-            <input class="form-control" ng-model="person.Googleplus" />
+            <input class="form-control" ng-model="contact.Googleplus" />
         </div>
     </div>
     <div class="row">
         <div class="col-lg-7 col-lg-offset-7"><button class="btn btn-primary" ng-click="save()">Save</button></div>
     </div>
 
-    {{person}}
+    {{contact}}
 </div>
 
 

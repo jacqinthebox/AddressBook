@@ -82,10 +82,13 @@
     <Content Include="app\css\bootstrap.min.css" />
     <Content Include="app\css\custom.css" />
     <Content Include="app\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="app\js\app.js" />
     <Content Include="app\templates\about.html" />
     <Content Include="app\index.html" />
-    <Content Include="app\js\app.js" />
-    <Content Include="app\templates\newPerson.html" />
+    <Content Include="app\js\app1.txt" />
+    <Content Include="app\templates\editContact.html" />
+    <Content Include="app\templates\listContacts.html" />
+    <Content Include="app\templates\addContact.html" />
     <Content Include="app\templates\start.html" />
     <Content Include="Global.asax" />
     <Content Include="app\lib\angular\angular-bootstrap-prettify.js" />
@@ -403,11 +406,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\PersonController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\Contact.cs" />
     <Compile Include="MongoConnectionHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
