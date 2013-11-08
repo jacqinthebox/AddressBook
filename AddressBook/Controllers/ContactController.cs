@@ -15,25 +15,16 @@ namespace AddressBook.Controllers
     {
         public MongoConnectionHandler<Contact> collection = new MongoConnectionHandler<Contact>();
 
-        public void Post([FromBody] Contact contact)
+        public HttpResponseMessage Post([FromBody] Contact contact)
         {
             var p = collection.MongoCollection.FindOne(Query.EQ("_id", contact.Id));
 
-            if (p != null)
-            {
-                collection.MongoCollection.Save(contact);
-            }
-            else
-            {
-                collection.MongoCollection.Insert(contact);
-                var response = Request.CreateResponse<Contact>(HttpStatusCode.Created, contact);
-            }
-          
-            /*
+             collection.MongoCollection.Insert(contact);
+             var response = Request.CreateResponse<Contact>(HttpStatusCode.Created, contact);
             string uri = Url.Link("DefaultApi", new { id = contact.Id });
             response.Headers.Location = new Uri(uri);
             return response;
-            */
+          
         }
 
         public IEnumerable Get()

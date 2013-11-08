@@ -29,8 +29,9 @@ addressbookModule.config(function ($routeProvider, $locationProvider) {
 });
 
 addressbookModule.factory('ContactFactory', function ($resource) {
-        return $resource('/api/contact/:id', { id: '@Id' }, { create: { method: 'POST' } }, { update: { method: 'PUT' } }, { remove: { method: 'DELETE' } });
-         //  return $resource('/api/contact/:id', { id: '@Id' });
+    return $resource('/api/contact/:id', { id: '@Id' },
+        { update: { method: 'PUT' } }
+        );
 
     });
 
@@ -42,31 +43,39 @@ addressbookModule.controller('ContactController', function ($scope, ContactFacto
        $scope.editContact = function (id) {
         console.log(id);
         $location.path('/edit/' + id);
-    }
+       }
+
+      
+       $scope.deleteContact = function (id) {
+           var contactToRemove = ContactFactory.get({ id: id }, function () {
+               console.log(id);
+               ContactFactory.remove(contactToRemove);
+
+           });
+       }
    
     });
 
 addressbookModule.controller('AddContactController', function ($scope, ContactFactory, $location, $routeParams) {
-
-   // $scope.contact = {};
-    $scope.save = function () {
-        $scope.contact.$save($scope.contact);
-        //ContactFactory.create($scope.contact);
-        $location.path('/');
+        $scope.save = function () {
+            //default method from ngresource
+            ContactFactory.save($scope.contact);
+            $location.path('/');
     }
    
-
 });
 
 
 addressbookModule.controller('EditContactController', function($scope, $location, $routeParams, ContactFactory) {
-
+    //populate the boxes
     $scope.contact = ContactFactory.get({ id: $routeParams.id });
-    console.log(({ id: $routeParams.id }));
+
     $scope.save = function () {
-        $scope.contact.$save();
+        //added the update method in ContactsFactory, otherwise it will create a new record instead of PUT.
+        ContactFactory.update($scope.contact);
         $location.path('/');
-    }
+     }
+    
 });
 
 
